@@ -19,6 +19,7 @@ jobs:
       - run: npm test -- --watch=false
       - run: npm run build:prod
 workflows:
+  version: 2
   build:
     jobs:
       - dev-build:

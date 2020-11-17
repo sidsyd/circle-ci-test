@@ -23,12 +23,12 @@ workflows:
   build:
     jobs:
       - dev-build:
-        filters:
-          branches:
-            only:
-              - /feature-.*/
+          filters:
+            branches:
+              only:
+                - /feature-.*/
       - prod-build:
-        filters:
-          branches:
-            only:
-              - master
+          filters:
+            branches:
+              only:
+                - master

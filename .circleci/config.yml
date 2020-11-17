@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  dev-build:
+  dev_build:
     docker: # use the docker executor type; machine and macos executors are also supported
       - image: circleci/node:10.15.3-browsers # the primary container, where your job's commands are run
     steps:
@@ -9,7 +9,7 @@ jobs:
       - run: npm run lint
       - run: npm test -- --watch=false
       - run: npm run build
-  prod-build:
+  prod_build:
     docker: # use the docker executor type; machine and macos executors are also supported
       - image: circleci/node:10.15.3-browsers # the primary container, where your job's commands are run
     steps:
@@ -22,12 +22,12 @@ workflows:
   version: 2
   build:
     jobs:
-      - dev-build:
+      - dev_build:
           filters:
             branches:
               only:
                 - /feature-.*/
-      - prod-build:
+      - prod_build:
           filters:
             branches:
               only:
